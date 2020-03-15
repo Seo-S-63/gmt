@@ -49,14 +49,14 @@ endif (${srcdir} STREQUAL ${bindir})
 cmake_minimum_required (VERSION 2.8.7)
 
 # Use NEW behavior with newer CMake releases
-foreach(p
+foreach (p
 		CMP0025 # CMake 3.0: Compiler id for Apple Clang is now AppleClang
 		CMP0026 # CMake 3.0: Disallow use of the LOCATION target property
 		CMP0058 # CMake 3.3: Ninja requires custom command byproducts to be explicit
 		CMP0074	# CMake 3.12: find_package uses PackageName_ROOT variables
 		)
-	if(POLICY ${p})
-		cmake_policy(SET ${p} NEW)
+	if (POLICY ${p})
+		cmake_policy (SET ${p} NEW)
 	endif()
 endforeach()
 
@@ -198,7 +198,7 @@ message(
 	"*\n"
 	"*  Options:\n"
 	"*  Found GSHHG database       : ${GSHHG_PATH} (${GSHHG_VERSION})\n"
-	"*  Found DCW-GMT database     : ${DCW_PATH}\n"
+	"*  Found DCW-GMT database     : ${DCW_PATH} (${DCW_VERSION})\n"
 	"*  Found GMT data server      : ${GMT_DATA_SERVER}\n"
 	"*  NetCDF library             : ${NETCDF_LIBRARY}\n"
 	"*  NetCDF include dir         : ${NETCDF_INCLUDE_DIR}\n"

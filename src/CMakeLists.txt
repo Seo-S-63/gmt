@@ -69,6 +69,7 @@ if (NOT GM)
 else (NOT GM)
 	execute_process(COMMAND gm help OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
 	string (REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" answer "${answer}")
+	# GMT_CONFIG_GM_VERSION is used when building macOS bundle
 	set (GMT_CONFIG_GM_VERSION "${answer}" CACHE INTERNAL "GM version message")
 	set (GMT_CONFIG_GM_MESSAGE "yes (${answer})" CACHE INTERNAL "GM config message")
 endif (NOT GM)
@@ -80,7 +81,6 @@ if (NOT FFMPEG)
 else (NOT FFMPEG)
 	execute_process(COMMAND ffmpeg -version OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
 	string (REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" answer "${answer}")
-	set (GMT_CONFIG_FFMPEG_VERSION "${answer}" CACHE INTERNAL "FFMPEG version message")
 	set (GMT_CONFIG_FFMPEG_MESSAGE "yes (${answer})" CACHE INTERNAL "FFMPEG config message")
 endif (NOT FFMPEG)
 
@@ -107,7 +107,6 @@ else (WIN32)
 		set (GMT_CONFIG_GS_MESSAGE "no" CACHE INTERNAL "GS config message")
 	else (NOT GS)
 		execute_process(COMMAND gs --version OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
-		set (GMT_CONFIG_GS_VERSION "${answer}" CACHE INTERNAL "GS version message")
 		set (GMT_CONFIG_GS_MESSAGE "yes (${answer})" CACHE INTERNAL "GS config message")
 	endif (NOT GS)
 endif (WIN32)
@@ -232,27 +231,21 @@ if (APPLE)
 	list (APPEND GMT_OPTIONAL_LIBRARIES ${ACCELERATE_FRAMEWORK})
 endif (APPLE)
 
-if (DEFINED GMT_ENABLE_OPENMP)
-	set (GMT_OPENMP TRUE CACHE INTERNAL "Turn on GMT OpenMP")
-endif (DEFINED GMT_ENABLE_OPENMP)
+
 find_package (OpenMP)
-if (OPENMP_FOUND AND GMT_OPENMP)
+if (OPENMP_FOUND AND GMT_ENABLE_OPENMP)
 	set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
 	set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 	set (CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${OpenMP_SHARED_LINKER_FLAGS}")
 	set (HAVE_OPENMP TRUE CACHE INTERNAL "OpenMP enabled." FORCE)
-	set (GMT_CONFIG_OPENMP_MESSAGE "enabled"
-		CACHE INTERNAL "OPENMP config message")
-else (OPENMP_FOUND AND GMT_OPENMP)
+	set (GMT_CONFIG_OPENMP_MESSAGE "enabled" CACHE INTERNAL "OPENMP config message")
+elseif (OPENMP_FOUND AND NOT GMT_ENABLE_OPENMP)
+	message (STATUS "User variable GMT_ENABLE_OPENMP not set: disabling OpenMP.")
+	set (GMT_CONFIG_OPENMP_MESSAGE "disabled (GMT_ENABLE_OPENMP not set)" CACHE INTERNAL "OPENMP config message")
+else ()
 	set (HAVE_OPENMP FALSE CACHE INTERNAL "OpenMP disabled." FORCE)
-	set (GMT_CONFIG_OPENMP_MESSAGE "disabled"
-		CACHE INTERNAL "OPENMP config message")
-endif (OPENMP_FOUND AND GMT_OPENMP)
-if (OPENMP_FOUND AND NOT GMT_OPENMP)
-	message (STATUS "User variable GMT_OPENMP not set: disabling OpenMP.")
-	set (GMT_CONFIG_OPENMP_MESSAGE "disabled (GMT_OPENMP not set)"
-		CACHE INTERNAL "OPENMP config message")
-endif (OPENMP_FOUND AND NOT GMT_OPENMP)
+	set (GMT_CONFIG_OPENMP_MESSAGE "disabled" CACHE INTERNAL "OPENMP config message")
+endif ()
 
 find_package(GLIB COMPONENTS gthread)
 if (GLIB_FOUND AND GMT_USE_THREADS)
@@ -298,7 +291,7 @@ endif (DO_EXAMPLES OR DO_TESTS AND NOT DCW_FOUND)
 
 if (DO_API_TESTS)
 	# These lines are temporarily here for the beta release - comment to avoid in the build
-	set (GMT_DEMOS_SRCS testapi.c testpsl.c testgmt.c testgmtshell.c testgmtio.c testgrdio.c testio.c
+	set (GMT_DEMOS_SRCS testpsl.c testgmtshell.c testgmtio.c testgrdio.c
 		testapiconv.c example1.c testapi_matrix.c testapi_matrix_plot.c testapi_vector.c test_JL.c testapi_mixmatrix.c
 		test_walter.c testapi_usergrid.c testapi_userdataset.c testapi_uservectors.c)
 endif (DO_API_TESTS)
@@ -434,7 +427,7 @@ endif (HAVE_M_LIBRARY)
 
 if (HAVE_ZLIB)
 	# for DEFLATE encoding
-  target_link_libraries (pslib ${ZLIB_LIBRARIES})
+	target_link_libraries (pslib ${ZLIB_LIBRARIES})
 endif (HAVE_ZLIB)
 
 # set the build version (VERSION) and the API version (SOVERSION)
@@ -453,25 +446,16 @@ if (WIN32 AND PSL_DLL_RENAME)
 endif (WIN32 AND PSL_DLL_RENAME)
 
 if (BUILD_SUPPLEMENTS)
-	# supplement directories (only those, which are to be included in gmtlib)
-	# EXTRA_BUILD_DIRS are for testing new supplements that are not yet in git.
-	# See cmake/ConfigUserAdvancedTemplate.cmake for setting this parameter.
-	set (GMT_SUPPL_DIRS geodesy gshhg img mgd77 potential segy seis
-		spotter x2sys ${EXTRA_BUILD_DIRS})
-endif (BUILD_SUPPLEMENTS)
-
-# path to all binary dirs (used to set PATH in test scripts)
-set (GMT_BINARY_DIR_PATH "${CMAKE_CURRENT_BINARY_DIR}/\${CMAKE_CONFIG_TYPE:-.}")
-
-if (BUILD_SUPPLEMENTS)
-	# process supplement directories
 	if (UNIX)
 		set (CMAKE_SHARED_MODULE_SUFFIX .so)
 	endif (UNIX)
+	# supplement directories (only those, which are to be included in gmtlib)
+	# EXTRA_BUILD_DIRS are for testing new supplements that are not yet in git.
+	# See cmake/ConfigUserAdvancedTemplate.cmake for setting this parameter.
+	set (GMT_SUPPL_DIRS geodesy gshhg img mgd77 potential segy seis spotter x2sys ${EXTRA_BUILD_DIRS})
+	# process supplement directories
 	foreach (_dir ${GMT_SUPPL_DIRS})
 		add_subdirectory (${_dir})
-		list (APPEND GMT_BINARY_DIR_PATH
-			"${CMAKE_CURRENT_BINARY_DIR}/${_dir}/\${CMAKE_CONFIG_TYPE:-.}")
 	endforeach (_dir)
 	# supplement library files
 	get_subdir_var_files (GMT_SUPPL_LIB_SRCS LIB_SRCS ${GMT_SUPPL_DIRS})
@@ -549,12 +533,6 @@ if (EXTRA_INCLUDE_NEWSUPPL)
 		include (${_f})
 	endforeach(_f)
 endif (EXTRA_INCLUDE_NEWSUPPL)
-
-
-# make UNIX PATH variable
-string (REPLACE ";" ":" GMT_BINARY_DIR_PATH "${GMT_BINARY_DIR_PATH}")
-set (GMT_BINARY_DIR_PATH ${GMT_BINARY_DIR_PATH} CACHE INTERNAL
-	"UNIX PATH to all binary dirs")
 
 # libgmt
 add_library (gmtlib
@@ -715,6 +693,11 @@ install (PROGRAMS gmtswitch
 install (PROGRAMS gmt_shell_functions.sh
 	RENAME gmt_shell_functions${GMT_INSTALL_NAME_SUFFIX}.sh
 	DESTINATION ${GMT_BINDIR}
+	COMPONENT Runtime)
+
+# Install gmt_make_module_src.sh to share/tools
+install (PROGRAMS gmt_make_module_src.sh
+	DESTINATION ${GMT_DATADIR}/tools
 	COMPONENT Runtime)
 
 if (WIN32)
