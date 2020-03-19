@@ -263,67 +263,67 @@ The following codes for <em>rr</em><em>u</em> are supported:</p>
 <tr class="row-even"><td>01d</td>
 <td>361 x    181</td>
 <td>106 KB</td>
-<td>1 arc degree global relief (SRTM15+V2 &#64; 111 km)</td>
+<td>1 arc degree global relief (SRTM15+V2.1 &#64; 111 km)</td>
 </tr>
 <tr class="row-odd"><td>30m</td>
 <td>721 x    361</td>
 <td>363 KB</td>
-<td>30 arc minute global relief (SRTM15+V2 &#64; 55 km)</td>
+<td>30 arc minute global relief (SRTM15+V2.1 &#64; 55 km)</td>
 </tr>
 <tr class="row-even"><td>20m</td>
 <td>1081 x    541</td>
 <td>759 KB</td>
-<td>20 arc minute global relief (SRTM15+V2 &#64; 37 km)</td>
+<td>20 arc minute global relief (SRTM15+V2.1 &#64; 37 km)</td>
 </tr>
 <tr class="row-odd"><td>15m</td>
 <td>1441 x    721</td>
 <td>1.3 MB</td>
-<td>15 arc minute global relief (SRTM15+V2 &#64; 28 km)</td>
+<td>15 arc minute global relief (SRTM15+V2.1 &#64; 28 km)</td>
 </tr>
 <tr class="row-even"><td>10m</td>
 <td>2161 x   1081</td>
 <td>2.8 MB</td>
-<td>10 arc minute global relief (SRTM15+V2 &#64; 18 km)</td>
+<td>10 arc minute global relief (SRTM15+V2.1 &#64; 18 km)</td>
 </tr>
 <tr class="row-odd"><td>06m</td>
 <td>3601 x   1801</td>
 <td>7.3 MB</td>
-<td>6 arc minute global relief (SRTM15+V2 &#64; 10 km)</td>
+<td>6 arc minute global relief (SRTM15+V2.1 &#64; 10 km)</td>
 </tr>
 <tr class="row-even"><td>05m</td>
 <td>4321 x   2161</td>
 <td>10 MB</td>
-<td>5 arc minute global relief (SRTM15+V2 &#64; 9 km)</td>
+<td>5 arc minute global relief (SRTM15+V2.1 &#64; 9 km)</td>
 </tr>
 <tr class="row-odd"><td>04m</td>
 <td>5401 x   2701</td>
 <td>16 MB</td>
-<td>4 arc minute global relief (SRTM15+V2 &#64; 7.5 km)</td>
+<td>4 arc minute global relief (SRTM15+V2.1 &#64; 7.5 km)</td>
 </tr>
 <tr class="row-even"><td>03m</td>
 <td>7201 x   3601</td>
 <td>27 MB</td>
-<td>3 arc minute global relief (SRTM15+V2 &#64; 5.6 km)</td>
+<td>3 arc minute global relief (SRTM15+V2.1 &#64; 5.6 km)</td>
 </tr>
 <tr class="row-odd"><td>02m</td>
 <td>10801 x   5401</td>
 <td>58 MB</td>
-<td>2 arc minute global relief (SRTM15+V2 &#64; 3.7 km)</td>
+<td>2 arc minute global relief (SRTM15+V2.1 &#64; 3.7 km)</td>
 </tr>
 <tr class="row-even"><td>01m</td>
 <td>21601 x  10801</td>
-<td>214 MB</td>
-<td>1 arc minute global relief (SRTM15+V2 &#64; 1.9 km)</td>
+<td>215 MB</td>
+<td>1 arc minute global relief (SRTM15+V2.1 &#64; 1.9 km)</td>
 </tr>
 <tr class="row-odd"><td>30s</td>
 <td>43201 x  21601</td>
-<td>765 MB</td>
-<td>30 arc second global relief (SRTM15+V2 &#64; 0.9 km)</td>
+<td>769 MB</td>
+<td>30 arc second global relief (SRTM15+V2.1 &#64; 1.0 km)</td>
 </tr>
 <tr class="row-even"><td>15s</td>
 <td>86400 x  43200</td>
 <td>2.6 GB</td>
-<td>15 arc second global relief (SRTM15+V2)</td>
+<td>15 arc second global relief (SRTM15+V2.1)</td>
 </tr>
 <tr class="row-odd"><td>03s</td>
 <td>432001 x 216001</td>
@@ -342,7 +342,7 @@ the SRTM data organized in sub-directories srtm1 and srtm3 within the server dir
 </div>
 <div class="section" id="technical-information">
 <h2>Technical Information<a class="headerlink" href="#technical-information" title="Permalink to this headline">¶</a></h2>
-<p>As you see, the 30s and lower resolutions are all derivatives of Scripps’ SRTM15+V2 grid
+<p>As you see, the 30s and lower resolutions are all derivatives of Scripps’ SRTM15+V2.1 grid
 (Tozer et al., 2019).  We have downsampled it via Cartesian Gaussian filtering to prevent
 aliasing while preserving the latitude-dependent resolution in the original 15 arc sec grid.
 The full (6 sigma) filter-widths are indicated in parenthesis. The 3 and 1 arc second data
@@ -354,7 +354,7 @@ to latitudes ±60˚. The SRTM tiles are only valid over land.  However, when the
 accessed as &#64;earth_relief_01s or &#64;earth_relief_03s we will automatically upsample the
 &#64;earth_relief_15s grid to fill in the missing ocean values (but only if the region includes
 oceanic areas). If you just want the original land-only SRTM tiles you may use &#64;srtm_relief_03s
-or &#64;srtm_relief_01s instead. All grids are gridline-registered except the original SRTM15+V2,
+or &#64;srtm_relief_01s instead. All grids are gridline-registered except the original SRTM15+V2.1,
 here called &#64;earth_relief_15s.</p>
 <p>The dimensions above reflect the number of nodes covered by the global grids and the sizes are
 the file sizes of the netCDF-4 compressed short int grids, making the files much smaller
@@ -392,7 +392,7 @@ all the remote files prior to losing connection, using the shell script <em>gmt_
 <div class="section" id="data-references">
 <h2>Data References<a class="headerlink" href="#data-references" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>SRTM15+V2 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>].</li>
+<li>SRTM15+V2.1 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>].</li>
 <li>SRTMGL3 tiles: [<a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003</a>].</li>
 <li>SRTMGL1 tiles: [<a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003</a>].</li>
 </ol>
@@ -422,7 +422,7 @@ all the remote files prior to losing connection, using the shell script <em>gmt_
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

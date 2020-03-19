@@ -254,9 +254,9 @@ that two consecutive (<em>x</em>,<em>y</em>) points define the local distance ax
 and the local <em>z</em> axis is then perpendicular to the distance axis,
 forming a right-handed coordinate system. The
 user may set a preferred positive anomaly plot direction, and if the
-positive normal is outside the plus/minus 90 degree window around the
+positive normal is outside the ±90 degree window around the
 preferred direction, then 180 degrees are added to the direction. Either
-the positive or the negative wiggle may be shaded.</p>
+the positive or the negative wiggle (or both) may be shaded.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -312,7 +312,7 @@ You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em
 <p class="last">Append <strong>+w</strong> followed by the <em>length</em> or the scale bar in data (<em>z</em>) units.
 By default, the anchor point on the scale is assumed to be the middle left corner (ML), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em> (see <a class="reference internal" href="text.html"><span class="doc">text</span></a>).
-Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
+<strong>Note</strong>: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>. Consequently,
 <strong>-DJ</strong> is used to place a scale outside the map frame while <strong>-Dj</strong> is used to place it inside the frame.
 Move scale label to the left side with <strong>+al</strong> [Default is to the right of the scale].
@@ -481,12 +481,11 @@ and obtain</p>
 digits, so the local perpendicular to the track swings around a lot. To
 see if this is the problem, you should do this:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk <span class="s1">&#39;{ if (NR &gt; 1) print atan2(y-$1, x-$2); y=$1; x=$2; }&#39;</span> yourdata.xyz <span class="p">|</span> more
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject -Af yourdata.xyz <span class="p">|</span> more
 </pre></div>
 </div>
 </div></blockquote>
-<p>(note that output is in radians; on some machines you need “nawk” to do
-this). Then if these numbers jump around a lot, you may do this:</p>
+<p>Then if these numbers jump around a lot, you may do this:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk <span class="s1">&#39;{ print NR, $0 }&#39;</span> yourdata.xyz <span class="p">|</span> filter1d -Fb5 -N4/0 <span class="se">\</span>
 --FORMAT_FLOAT_OUT<span class="o">=</span>%.12g &gt; smoothed.xyz
@@ -527,7 +526,7 @@ this). Then if these numbers jump around a lot, you may do this:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

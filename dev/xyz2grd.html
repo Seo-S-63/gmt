@@ -245,7 +245,7 @@ with data. Such unconstrained nodes are set to a value specified by the
 user [Default is NaN]. Nodes with more than one value will be set to the
 mean value. As an option (using <strong>-Z</strong>), a 1-column z-table may be read
 assuming all nodes are present (z-tables can be in organized in a number
-of formats, see <strong>-Z</strong> below.)  Note: <strong>xyz2grd</strong> does not grid the data,
+of formats, see <strong>-Z</strong> below.)  <strong>Note</strong>: <strong>xyz2grd</strong> does not grid the data,
 it simply reformats existing data to a grid structure.  For gridding,
 see <strong>surface</strong>, <strong>greenspline</strong>, <strong>nearneighbor</strong>, or <strong>triangulate</strong>.</p>
 </div>
@@ -276,7 +276,7 @@ appending <strong>+n</strong> to the supplied integer argument; the increment is
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="cookbook/file-formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
-details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
+details. <strong>Note</strong>: If <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils" id="r">
@@ -347,7 +347,7 @@ make <em>flags</em> start with <strong>T</strong>(op) if first row is y
 Then, append <strong>L</strong> or <strong>R</strong> to indicate that first element is at
 left or right end of row. Likewise for column formats: start with
 <strong>L</strong> or <strong>R</strong> to position first column, and then append <strong>T</strong> or
-<strong>B</strong> to position first element in a row. Note: These two row/column
+<strong>B</strong> to position first element in a row. <strong>Note</strong>: These two row/column
 indicators are only required for grids; for other tables they do not
 apply. For gridline registered grids: If data are periodic in x but
 the incoming data do not contain the (redundant) column at x = xmax,
@@ -563,7 +563,7 @@ that is assigned to each node in a cartesian data set, use</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

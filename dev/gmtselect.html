@@ -252,7 +252,7 @@ selected based on whether or not they are 1) inside a rectangular region (<stron
 polygons in the <em>polygonfile</em>, 5) inside geographical features (based on coastlines), 6) has z-values
 within a given range, or 7) inside bins of a grid mask whose nodes are non-zero. The sense of the tests can
 be reversed for each of these 6 criteria by using the <strong>-I</strong> option. See option <strong>-:</strong> on how to read
-(y,x) or (latitude,longitude) files (this option affects all module input data).  Note: If no projection
+(y,x) or (latitude,longitude) files (this option affects all module input data).  <strong>Note</strong>: If no projection
 information is used then you must supply <strong>-fg</strong> to tell <strong>select</strong> that your data are geographical.</p>
 </div>
 <div class="section" id="required-arguments">
@@ -390,7 +390,7 @@ Input file must have at least three columns. To indicate no limit on
 min or max, specify a hyphen (-). If your 3rd column is absolute
 time then remember to supply <strong>-f</strong>2T. To specify another column, append
 <strong>+c</strong><em>col</em>, and to specify several tests just repeat the <strong>Z</strong> option as
-many times has you have columns to test. Note: when more than one <strong>Z</strong> option
+many times has you have columns to test. <strong>Note</strong>: When more than one <strong>Z</strong> option
 is given then the <strong>-Iz</strong> option cannot be used.  In the case of multiple tests
 you may use these modifiers as well: <strong>a</strong> passes any record that passes at least
 one of your <em>z</em> tests [all tests must pass], and <strong>i</strong> reverses the tests to pass
@@ -645,7 +645,7 @@ we employ a full spherical ray-shooting method to determine a points status.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

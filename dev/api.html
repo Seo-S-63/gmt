@@ -1910,7 +1910,7 @@ found.</li>
 first get a grid structures with a header, then read the data arrays). Most of
 these arguments have been discussed earlier. It is useful when you need to read
 a series of files (e.g., from a list with filenames) or want to specify the items
-to read using a UNIX wildcard specification.  Note: If used with <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a>
+to read using a UNIX wildcard specification.  <strong>Note</strong>: If used with <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a>
 then you will receive an array of structures as well.  Typically, many data files
 are read into separate tables that all form part of a single SET (this is what <a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a> does),
 but if <a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a> is used on the same arguments then an array of one-table sets will
@@ -1962,7 +1962,7 @@ instead of grids or dataset you must add the modifiers GMT_IS_MATRIX or GMT_IS_V
 to <code class="docutils literal notranslate"><span class="pre">family</span></code> so that the module knows what to do.  Finally, in the case of passing
 <code class="docutils literal notranslate"><span class="pre">data</span></code> as NULL you may also control what type of matrix or vector will be created in
 GMT for the output by adding in the modifiers GMT_VIA_type, as listed in <a class="reference internal" href="#tbl-viatypes"><span class="std std-ref">types</span></a>.
-Note: GMT tries to minimize data duplication if possible, so if your input arrays are
+<strong>Note</strong>: GMT tries to minimize data duplication if possible, so if your input arrays are
 compatible with the data type used by the modules then we may use your array directly.
 This <em>may</em> have the side-effect that your input array is modified by the module.
 If you want to prevent this from happening then add GMT_IS_DUPLICATE to the <code class="docutils literal notranslate"><span class="pre">direction</span></code>
@@ -2477,7 +2477,7 @@ Table <a class="reference internal" href="#tbl-comments"><span class="std std-re
 by adding (bitwise “or”). The <a class="reference internal" href="#gmt-set-comment">GMT_Set_Comment</a> function does not actually
 output anything but sets the relevant comment and header records in the
 relevant structure. When a file is written out the information will be
-output as well (Note: Users can always decide if they wish to turn
+output as well (<strong>Note</strong>: Users can always decide if they wish to turn
 header output on or off via the common GMT option <code class="docutils literal notranslate"><span class="pre">-h</span></code>. For
 record-by-record writing you must enable the header block output when
 you call <a class="reference internal" href="#gmt-begin-io">GMT_Begin_IO</a>.</p>
@@ -2636,7 +2636,7 @@ preparing a geographic grid outside of GMT you need to add the mode
 <code class="docutils literal notranslate"><span class="pre">GMT_GRID_IS_GEO</span></code> to ensure that the proper metadata will be written
 to the netCDF header, thus letting the grid be recognized as such.</dd>
 </dl>
-<p>Note: If <code class="docutils literal notranslate"><span class="pre">method</span></code> is GMT_IS_FILE, <a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a> is <code class="docutils literal notranslate"><span class="pre">GMT_IS_GRID</span></code>,
+<p><strong>Note</strong>: If <code class="docutils literal notranslate"><span class="pre">method</span></code> is GMT_IS_FILE, <a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a> is <code class="docutils literal notranslate"><span class="pre">GMT_IS_GRID</span></code>,
 and the filename implies a change from NaN to another value then the grid is
 modified accordingly. If you continue to use that grid after writing please be
 aware that the changes you specified were applied to the grid.</p>
@@ -2890,7 +2890,7 @@ obtain the two coordinates in decimal degrees by calling</p>
 </div>
 </div></blockquote>
 <p>Your program can now check that <code class="docutils literal notranslate"><span class="pre">n</span></code> equals 2 and then use the values
-in <code class="docutils literal notranslate"><span class="pre">pairs</span></code> separately. Note: Dimensions given with units of inches, cm, or points
+in <code class="docutils literal notranslate"><span class="pre">pairs</span></code> separately. <strong>Note</strong>: Dimensions given with units of inches, cm, or points
 are converted to the current default unit set via <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>,
 while distances given in km, nautical miles, miles, feet, or
 survey feet are returned in meters. Arc lengths in minutes and seconds
@@ -2948,7 +2948,7 @@ shared GMT API library, then you can access any GMT enum via</p>
 including the ones listed in <a class="reference internal" href="#tbl-types"><span class="std std-ref">types</span></a> and <a class="reference internal" href="#tbl-viatypes"><span class="std std-ref">types</span></a>; see
 gmt_resources.h for the full listing.
 The function returns the corresponding integer value.  For unrecognized names we return -99999.
-Note: You may pass a NULL pointer as API if you need to obtain enum values prior to calling <a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a>.</p>
+<strong>Note</strong>: You may pass a NULL pointer as API if you need to obtain enum values prior to calling <a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a>.</p>
 <p>For indexed access to custom grids and images we may need to know the internal matrix layout.
 You can change this information via</p>
 <blockquote id="gmt-set-index">
@@ -3115,7 +3115,7 @@ returns 0  (<code class="docutils literal notranslate"><span class="pre">GMT_NOE
 wish to manipulate program option structures within their own programs.
 These allow you to create new option structures, append them to the
 linked list, replace existing options with new values, find a particular
-option, and remove options from the list. Note: The order in which the
+option, and remove options from the list. <strong>Note</strong>: The order in which the
 options appear in the linked list is of no consequence to GMT.
 Internally, GMT will sort and process the options in the manner
 required. Externally, you are free to maintain your own order.</p>
@@ -3191,7 +3191,7 @@ NULL. The function returns 1 if there is an error, otherwise it returns 0 (<code
 </div>
 </div></blockquote>
 <p>We return 1 if the option is not found in the list and set
-<code class="docutils literal notranslate"><span class="pre">API-&gt;error</span></code> accordingly. Note: Only the first occurrence of the
+<code class="docutils literal notranslate"><span class="pre">API-&gt;error</span></code> accordingly. <strong>Note</strong>: Only the first occurrence of the
 specified option will be deleted. If you need to delete all such options
 you will need to call this function in a loop until it returns a
 non-zero status.</p>
@@ -3841,7 +3841,7 @@ the <a class="reference internal" href="#struct-fill"><span class="std std-ref">
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>The full definition of the <code class="docutils literal notranslate"><span class="pre">GMT_FILL</span></code> structure.  Note: Not part of the GMT API:</p>
+<p>The full definition of the <code class="docutils literal notranslate"><span class="pre">GMT_FILL</span></code> structure.  <strong>Note</strong>: Not part of the GMT API:</p>
 <div class="highlight-c notranslate" id="struct-fill"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">GMT_FILL</span> <span class="p">{</span>        <span class="cm">/*! Holds fill attributes */</span>
     <span class="kt">double</span>                <span class="n">rgb</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>             <span class="cm">/* Chosen color if no pattern + Transparency 0-1 [0 = opaque] */</span>
     <span class="kt">double</span>                <span class="n">f_rgb</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">b_rgb</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span> <span class="cm">/* Colors applied to unset and set bits in 1-bit image */</span>
@@ -4106,7 +4106,7 @@ own threads.</td></tr>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

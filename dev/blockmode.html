@@ -278,7 +278,7 @@ appending <strong>+n</strong> to the supplied integer argument; the increment is
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="cookbook/file-formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
-details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
+details. <strong>Note</strong>: If <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils">
@@ -298,7 +298,7 @@ If no file is specified, <strong>blockmode</strong> will read from standard inpu
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>fields</em></dt>
 <dd>Select which fields to write to individual grids.  Requires <strong>-G</strong>.
-Append comma-separated codes for available fields: <strong>z</strong> (the modal
+Append the codes for available fields: <strong>z</strong> (the modal
 data z), <strong>s</strong> (the L1 scale of the mode), <strong>l</strong> (lowest
 value), <strong>h</strong> (highest value) and <strong>w</strong> (the output weight; requires <strong>-W</strong>).
 Note <strong>s</strong>|<strong>l</strong>|<strong>h</strong> requires <strong>-E</strong>, and <strong>Es</strong>|<strong>r</strong>
@@ -452,7 +452,7 @@ data representing integer counts, try:</p>
 </div>
 <p>To determine the mode and L1 scale (MAD) on the mode per 10 minute bin and save these to two separate grids
 called field_z.nc and field_s.nc, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Az,s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Azs
 </pre></div>
 </div>
 </div>
@@ -492,7 +492,7 @@ called field_z.nc and field_s.nc, run:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

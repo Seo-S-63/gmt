@@ -397,8 +397,8 @@ alternatives that trade off accuracy and computation time.</p>
 correction for the spherical nature of a planetary body by computing the
 distance between two points A and B as</p>
 <div class="math notranslate nohighlight">
-\[d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
-\theta_B}{2} \right ] \Delta \lambda^2}, \label{eq:flatearth}\]</div>
+\[d_f = R \sqrt{(\theta_A - \theta_B)^2 + (\cos \left [ \frac{\theta_A +
+\theta_B}{2} \right ] \Delta \lambda)^2}, \label{eq:flatearth}\]</div>
 <p>where <em>R</em> is the representative (or spherical) radius of the
 planet, <span class="math notranslate nohighlight">\(\theta\)</span> is latitude, and the difference in longitudes,
 <span class="math notranslate nohighlight">\(\Delta \lambda = \lambda_A - \lambda_B\)</span>, is adjusted for any
@@ -424,7 +424,7 @@ via the Haversine equation</p>
 for an ellipsoid is required (typically for a limited surface area). For
 instance, a search radius of 5000 feet using this mode of computation
 would be specified as <strong>-S</strong>5000<strong>f</strong>.</p>
-<p>Note: There are two additional
+<p><strong>Note</strong>: There are two additional
 GMT defaults that control how
 great circle (and Flat Earth) distances are computed. One concerns the
 selection of the “mean radius”. This is selected by
@@ -660,15 +660,15 @@ At the moment this collection is limited to Earth relief grids.  If you specify
 a grid input named <strong>&#64;earth_relief_</strong><em>res</em> on a command line then
 such a grid will automatically be downloaded from the GMT Data Server and placed
 in the <em>server</em> directory under <strong>$GMT_USERDIR</strong> [~/.gmt].  The resolution <em>res</em> allows a choice among
-15 common grid spacings: 60m, 30m, 20m, 15m, 10m, 06m, 05m, 04m, 03m, 02m, 01m,
+15 common grid spacings: 01d, 30m, 20m, 15m, 10m, 06m, 05m, 04m, 03m, 02m, 01m,
 30s, and 15s (with file sizes 111 kb, 376 kb, 782 kb, 1.3 Mb, 2.8 Mb, 7.5 Mb,
 11 Mb, 16 Mb, 27 Mb, 58 Mb, 214 Mb, 778 Mb, and 2.6 Gb respectively) as well
 as the SRTM tile resolutions 03s and 01s (6.8 Gb and 41 Gb for the whole set, respectively). Once
 one of these grids have been downloaded any future reference will simply obtain the
 file from <strong>$GMT_USERDIR</strong> (except if explicitly removed by the user).
-Note: The four highest resolutions are the original data sets SRTM15+, SRTM30+,
-ETOPO1 and ETOPO2V2.  Lower resolutions are spherically Gaussian-filtered versions
-of ETOPO1.  The SRTM (version 3) 1 and 3 arc-sec tiles are only available over land
+<strong>Note</strong>: The 15 arc-sec data comes from the original dataset SRTM15+.
+Lower resolutions are spherically Gaussian-filtered versions of SRTM15+.
+The SRTM (version 3) 1 and 3 arc-sec tiles are only available over land
 between 60 degrees south and north latitude and are stored as highly compressed JPEG2000
 tiles on the GMT server.  These are individually downloaded as requested, converted to netCDF
 grids and stored in subdirectories srtm1 and srtm3 under the server directory, and assembled
@@ -1193,7 +1193,7 @@ neither print nor show transparency. They will simply ignore your
 attempt to create transparency and will plot any material as opaque.
 Ghostscript and its derivatives such as GMT’s
 <a class="reference internal" href="../psconvert.html"><span class="doc">psconvert</span></a> support transparency (if
-compiled with the correct build option). Note: If you use <strong>Acrobat
+compiled with the correct build option). <strong>Note</strong>: If you use <strong>Acrobat
 Distiller</strong> to create a PDF file you must first change some settings to
 make transparency effective: change the parameter /AllowTransparency to
 true in your *.joboptions file.</p>
@@ -2516,7 +2516,7 @@ the coordinates of the grid passed to such programs:</p>
 <li>You have a geographic grid (i.e., in longitude and latitude). Simply
 supply the <strong>-fg</strong> option and your grid coordinates will
 automatically be converted to meters via a “Flat Earth” approximation
-on the currently selected ellipsoid (Note: this is only possible in
+on the currently selected ellipsoid (<strong>Note</strong>: This is only possible in
 those few programs that require this capability. In general, <strong>-fg</strong>
 is used to specify table coordinates).</li>
 <li>You have a Cartesian grid but the units are not meters (e.g., they
@@ -2782,7 +2782,7 @@ u8|u16|i16|u32|i32|float32, and where i|u denotes signed|unsigned. If not provid
 is float32. Both driver names and data types are case insensitive. The <em>options</em> is a list of one or more concatenated
 number of GDAL <em>-co</em> options. For example, to write a lossless JPG2000 grid one would append
 <strong>+c</strong>QUALITY=100<strong>+c</strong>REVERSIBLE=YES<strong>+c</strong>YCBCR420=NO
-Note: you will have to specify a <em>nan</em> value for integer data types unless you wish that all NaN data values
+<strong>Note</strong>: You will have to specify a <em>nan</em> value for integer data types unless you wish that all NaN data values
 should be replaced by zero.</p>
 </div>
 </div>
@@ -2964,7 +2964,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#term-ps-comments">
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

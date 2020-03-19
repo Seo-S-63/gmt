@@ -259,7 +259,7 @@ by 146).</p>
 <dd>This must be an Encapsulated PostScript (EPS) file or a raster
 image. An EPS file must contain an appropriate BoundingBox. A raster
 file can have a depth of 1, 8, 24, or 32 bits and is read via GDAL.
-Note: If GDAL was not configured during GMT installation then only
+<strong>Note</strong>: If GDAL was not configured during GMT installation then only
 EPS files are supported.</dd>
 </dl>
 </div>
@@ -275,7 +275,7 @@ the <em>refpoint</em> via a 2-char justification code that refers to the (invisi
 You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em> in the direction implied by <em>code</em> or <strong>+j</strong><em>justify</em>.</p>
 <p class="last">By default, the anchor point on the scale is assumed to be the bottom left corner (BL), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em> (see <a class="reference internal" href="text.html"><span class="doc">text</span></a>).
-Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
+<strong>Note</strong>: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>.
 Specify image size in one of two ways:
 Use <strong>+r</strong><em>dpi</em> to set the dpi of the image in dots per inch, or use
@@ -374,7 +374,7 @@ no effect when placing Encapsulated <em>PostScript</em> files.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<p><strong>Note</strong>: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>To plot the remote image needle.jpg, scaling it be 7 cm wide (height is scaled
@@ -437,7 +437,7 @@ to be 2.5 cm wide, use:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

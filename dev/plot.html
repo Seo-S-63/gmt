@@ -424,7 +424,7 @@ the input data; this cannot be used in conjunction with binary input.
 Optionally, append <strong>c</strong>, <strong>i</strong>, or
 <strong>p</strong> to indicate that the size information in the input data is in
 units of cm, inch, or point, respectively [Default is
-<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. Note: if you provide <em>both</em> size and symbol via the
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. <strong>Note</strong>: If you provide <em>both</em> size and symbol via the
 input file you must use <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> to indicate the unit
 used for the symbol size or append the units to the sizes in the file.
 If symbol sizes are expected via the third data column then you may convert
@@ -491,7 +491,7 @@ heads. Append <strong>+o</strong><em>offset</em> to offset the first symbol from
 beginning of the front by that amount [0]. The chosen symbol is drawn
 with the same pen as set for the line (i.e., via <strong>-W</strong>). To use an
 alternate pen, append <strong>+p</strong><em>pen</em>. To skip the outline, just use
-<strong>+p</strong>.  Note: By placing <strong>-Sf</strong>
+<strong>+p</strong>.  <strong>Note</strong>: By placing <strong>-Sf</strong>
 options in the segment header you can change the front types on a
 segment-by-segment basis.</dd>
 <dt><strong>-Sg</strong></dt>
@@ -524,7 +524,7 @@ directory or (2) in ~/.gmt or (3) in
 may add their own custom *.def files; see CUSTOM SYMBOLS below.</dd>
 <dt><strong>-Sl</strong></dt>
 <dd><strong>l</strong>etter or text string (less than 256 characters). Give size, and
-append <strong>+t</strong><em>string</em> after the size. Note that the size is only approximate;
+append <strong>+t</strong><em>string</em> after the size. <strong>Note</strong>: The size is only approximate;
 no individual scaling is done for different characters. Remember to
 escape special characters like *. Optionally, you may append <strong>+f</strong><em>font</em>
 to select a particular font [Default is <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>] and
@@ -546,7 +546,7 @@ in columns 3-5. See <a class="reference internal" href="#vector-attributes">Vect
 <dt><strong>-Sq</strong></dt>
 <dd><p class="first"><strong>q</strong>uoted line, i.e., lines with annotations such as contours. Append
 [<strong>d</strong>|<strong>D</strong>|<strong>f</strong>|<strong>l</strong>|<strong>L</strong>|<strong>n</strong>|<strong>N</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>|<strong>X</strong>]<em>info</em>[:<em>labelinfo</em>].
-Note the colon that separates the algorithm settings from the label information.
+<strong>Note</strong>: The colon that separates the algorithm settings from the label information.
 The required argument controls the placement of labels along the quoted
 lines. Choose among six controlling algorithms:</p>
 <blockquote>
@@ -692,7 +692,7 @@ leading hyphen (-) then there will be no space between label
 value and the prefix. [Default is no prefix].</dd>
 </dl>
 </div></blockquote>
-<p class="last">Note: By placing <strong>-Sq</strong> options in the segment header you can change
+<p class="last"><strong>Note</strong>: By placing <strong>-Sq</strong> options in the segment header you can change
 the quoted text attributes on a segment-by-segment basis.</p>
 </dd>
 <dt><strong>-Sr</strong></dt>
@@ -753,13 +753,13 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dd>geovector. Azimuth (in degrees east from north) and geographical length
 must be found in columns 3 and 4. The <em>size</em> is the length of the
 vector head. Vector width is set by <strong>-W</strong>. See <a class="reference internal" href="#vector-attributes">Vector Attributes</a>
-for specifying attributes. Note: Geovector stems are drawn as thin
+for specifying attributes. <strong>Note</strong>: Geovector stems are drawn as thin
 filled polygons and hence pen attributes like dashed and dotted are
 not available. For allowable geographical units, see <a class="reference internal" href="#units">Units</a>.</dd>
 <dt><strong>-S~</strong></dt>
 <dd><p class="first">decorated line, i.e., lines with symbols along them. Append
 [<strong>d</strong>|<strong>D</strong>|<strong>f</strong>|<strong>l</strong>|<strong>L</strong>|<strong>n</strong>|<strong>N</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>|<strong>X</strong>]<em>info</em>[:<em>symbolinfo</em>].
-Note the colon that separates the algorithm settings from the symbol information.
+<strong>Note</strong>: The colon that separates the algorithm settings from the symbol information.
 The required argument controls the placement of symbols along the decorated
 lines. Choose among six controlling algorithms:</p>
 <blockquote>
@@ -835,7 +835,7 @@ color = black, style = solid].</dd>
 symbol angles [Default is 10].</dd>
 </dl>
 </div></blockquote>
-<p class="last">Note: By placing <strong>-S~</strong> options in the segment header you can change
+<p class="last"><strong>Note</strong>: By placing <strong>-S~</strong> options in the segment header you can change
 the decorated lines on a segment-by-segment basis.</p>
 </dd>
 </dl>
@@ -1021,7 +1021,7 @@ coordinates of the vector end point.</p>
 <blockquote>
 <div><strong>+z</strong><em>scale</em> expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
-<p>Note: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
+<p><strong>Note</strong>: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
 from the vector stem (a line).  In GMT4, the entire vector was a polygon and it could only
 be a straight Cartesian vector. Yes, the old GMT4 vector shape remains accessible if
 you specify a vector (<strong>-Sv</strong>|<strong>V</strong>) using the GMT4 syntax, explained here: <em>size</em>, if present, will
@@ -1041,7 +1041,7 @@ The examples that use remote files (file names starting with <code class="docuti
 can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
-<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<p><strong>Note</strong>: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>To plot solid red circles (diameter = 0.2 cm) at the positions listed
@@ -1148,7 +1148,7 @@ a pattern. Other standard geometric symbols can also be used. See Appendix
 </div>
 <div class="section" id="gmt4-vector">
 <h2>GMT4 Vector<a class="headerlink" href="#gmt4-vector" title="Permalink to this headline">¶</a></h2>
-<p>Note: The old-style, single-polygon vector available in GMT4 and earlier versions
+<p><strong>Note</strong>: The old-style, single-polygon vector available in GMT4 and earlier versions
 has been added to GMT5 for backwards compatibility with old scripts.
 For reference, the old vector syntax is listed here:
 The <em>size</em>, if present, will be interpreted as <em>arrowwidth/headlength/headwidth</em>.
@@ -1211,7 +1211,7 @@ to supply a legend size (i.e., length of a line symbol) via the <strong>+s</stro
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

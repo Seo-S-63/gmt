@@ -277,7 +277,7 @@ The recognized 4:3 ratio formats have a canvas dimension of 24 x 18 cm <em>or</e
 and are (with pixel dimensions given in parenthesis):
 <strong>uxga</strong> (1600 x 1200), <strong>sxga+</strong> (1400 x 1050), <strong>xga</strong> (1024 x 768),
 <strong>svga</strong> (800 x 600), and <strong>dvd</strong> (640 x 480).
-Note: Your <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> setting determines if <strong>movie</strong> sets
+<strong>Note</strong>: Your <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> setting determines if <strong>movie</strong> sets
 you up to work with the SI or US canvas dimensions.  Instead of a named format you can
 request a custom format directly by giving <em>width</em>x<em>height</em>x<em>dpu</em>,
 where <em>dpu</em> is the dots-per-unit pixel density (pixel density is set automatically for the named formats).</dd>
@@ -285,7 +285,7 @@ where <em>dpu</em> is the dots-per-unit pixel density (pixel density is set auto
 <dl class="docutils" id="n">
 <dt><strong>-N</strong><em>prefix</em></dt>
 <dd>Determines the name of the final movie file and a sub-directory with frame images (but see <strong>-W</strong>).
-Note: If the subdirectory exist then we exit immediately.  You are therefore required to remove any
+<strong>Note</strong>: If the subdirectory exist then we exit immediately.  You are therefore required to remove any
 old directory by that name first.  This is done to prevent the accidental loss of valuable data.</dd>
 </dl>
 <dl class="docutils" id="t">
@@ -300,7 +300,7 @@ etc. The number of records equals
 the number of frames. Note that the <em>background</em> script is allowed to create <em>timefile</em>,
 hence we check for its existence both before <em>and</em> after the background script has completed.  Normally,
 the frame numbering starts at 0; you can change this by appending a different starting frame
-number via <strong>+s</strong><em>first</em>.  Note: All frames are still included; this modifier only affects
+number via <strong>+s</strong><em>first</em>.  <strong>Note</strong>: All frames are still included; this modifier only affects
 the numbering of the given frames.  Finally, <strong>+p</strong> can be used to set the tag <em>width</em> of the format
 used in naming frames.  For instance, name_000010.png has a tag width of 6.  By default, this
 is automatically set but if you are splitting large jobs across several computers then you
@@ -378,7 +378,7 @@ in seconds of each frame [Default is 1/<em>framerate</em>],
 <strong>f</strong> selects the running frame number as the label, <strong>p</strong> selects the percentage of progress so far,
 <strong>c</strong><em>col</em> uses the value in column
 number <em>col</em> of <em>timefile</em> as label (first column is 0), while <strong>t</strong><em>col</em> uses word number
-<em>col</em> from the trailing text in <em>timefile</em> (first word is 0).  Note: If you use <strong>-Lc</strong>
+<em>col</em> from the trailing text in <em>timefile</em> (first word is 0).  <strong>Note</strong>: If you use <strong>-Lc</strong>
 with an absolute time column, then the format of the timestamp will depend on the two default settings
 <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> and <a class="reference internal" href="gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>.  By default,
 both <em>date</em> and <em>time</em> are displayed (with a space between); set one of the settings to “-” to skip that component.
@@ -695,7 +695,7 @@ ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex <span class="nv">vstack</span><s
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

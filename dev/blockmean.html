@@ -277,7 +277,7 @@ appending <strong>+n</strong> to the supplied integer argument; the increment is
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="cookbook/file-formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
-details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
+details. <strong>Note</strong>: If <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils">
@@ -297,7 +297,7 @@ is specified, <strong>blockmean</strong> will read from standard input.</dd>
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>fields</em></dt>
 <dd>Select which fields to write to individual grids.  Requires <strong>-G</strong>.
-Append comma-separated codes for available fields: <strong>z</strong> (the mean
+Append the codes for available fields: <strong>z</strong> (the mean
 data z, but see <strong>-S</strong>), <strong>s</strong> (standard deviation), <strong>l</strong> (lowest
 value), <strong>h</strong> (highest value) and <strong>w</strong> (the output weight; requires <strong>-W</strong>).
 Note <strong>s</strong>|<strong>l</strong>|<strong>h</strong> requires <strong>-E</strong> [Default is just <strong>z</strong>].</dd>
@@ -438,7 +438,7 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 <p>To determine the mean and standard deviation per 10 minute bin and save these to two separate grids
 called field_z.nc and field_s.nc, run</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmean @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Az,s
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmean @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Azs
 </pre></div>
 </div>
 </div></blockquote>
@@ -480,7 +480,7 @@ called field_z.nc and field_s.nc, run</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

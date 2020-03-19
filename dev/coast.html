@@ -451,7 +451,7 @@ appended to the distance length). Cartesian projections: Origin <strong>+c</stro
 not required, <strong>+f</strong> is not allowed, and no units should be specified in <strong>+w</strong>.
 You must set any Cartesian data units via <strong>+l</strong>.
 For a vertical rather than horizontal Cartesian scale, append <strong>+v</strong>.
-Note: Use <a class="reference internal" href="gmt.conf.html#term-font-label"><span class="xref std std-term">FONT_LABEL</span></a> to change the label font and
+<strong>Note</strong>: Use <a class="reference internal" href="gmt.conf.html#term-font-label"><span class="xref std std-term">FONT_LABEL</span></a> to change the label font and
 <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>
 to change the annotation font.  The height of the map scale is controlled
 by <a class="reference internal" href="gmt.conf.html#term-map-scale-height"><span class="xref std std-term">MAP_SCALE_HEIGHT</span></a>, and the pen thickness is
@@ -464,7 +464,7 @@ See <strong>-F</strong> on how to place a panel behind the scale.</p>
 <dd>Dump a single multisegment ASCII (or binary, see
 <strong>-bo</strong>) file to standard output. No plotting
 occurs. Specify one of <strong>-E</strong>, <strong>-I</strong>, <strong>-N</strong> or <strong>-W</strong>.
-Note: if <strong>-M</strong> is used with <strong>-E</strong> then <strong>-R</strong> or the <strong>+r</strong> modifier
+<strong>Note</strong>: If <strong>-M</strong> is used with <strong>-E</strong> then <strong>-R</strong> or the <strong>+r</strong> modifier
 to <strong>-E</strong> are not required as we automatically determine the region
 given the selected geographic entities.  If using <strong>-W</strong> and you want
 just certain levels (1-4) then use the full syntax <strong>-W</strong><em>level</em>/<em>pen</em>
@@ -506,7 +506,7 @@ You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em
 <p class="last">By default, the anchor point on the directional rose is assumed to be the center of the rose (MC), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em>
 (see <a class="reference internal" href="text.html"><span class="doc">text</span></a> for list and explanation of codes).
-Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
+<strong>Note</strong>: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>.
 Append <strong>+w</strong><em>width</em> to set the width of the rose in plot coordinates (in inches, cm, or points).
 Add <strong>+f</strong> to get a “fancy” rose, and specify in <em>level</em> what
@@ -530,7 +530,7 @@ You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em
 <p class="last">By default, the anchor point on the magnetic rose is assumed to be the center of the rose (MC), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em>
 (see <a class="reference internal" href="text.html"><span class="doc">text</span></a> for list and explanation of codes).
-Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
+<strong>Note</strong>: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>.
 Append <strong>+w</strong><em>width</em> to set the width of the rose in plot coordinates (in inches, cm, or points).
 Use <strong>+d</strong> to assign the magnetic declination and set <em>dlabel</em>, which is a label for
@@ -597,7 +597,7 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<p><strong>Note</strong>: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>To plot a green Africa with white outline on blue background, with
@@ -730,7 +730,7 @@ Institute, Lensfield Road, Cambridge CB2 1ER, United Kingdom.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

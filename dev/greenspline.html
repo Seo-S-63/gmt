@@ -218,7 +218,7 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt greenspline</strong> [ <em>table</em> ]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>gradfile</em><strong>+f</strong><strong>1</strong>|<strong>2</strong>|<strong>3</strong>|<strong>4</strong>|<strong>5</strong> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>n</strong>]<em>value</em>[<strong>+f</strong><em>file</em>] ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>n</strong>]<em>value</em>[%][<strong>+f</strong><em>file</em>] ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>mode</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<em>misfitfile</em>] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grdfile</em> ]
@@ -298,7 +298,7 @@ horizontal (and for 3-D the vertical axis). <strong>4</strong>: records contain
 <strong>x</strong>, <strong>v</strong>. <strong>5</strong>: records contain <strong>x</strong>, <strong>n</strong>, <em>v</em>.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong>[<strong>n</strong>]<em>value</em>[<strong>+f</strong><em>file</em>]</dt>
+<dt><strong>-C</strong>[<strong>n</strong>]<em>value</em>[%][<strong>+f</strong><em>file</em>]</dt>
 <dd>Find an approximate surface fit: Solve the linear system for the
 spline coefficients by SVD and eliminate the contribution from all
 eigenvalues whose ratio to the largest eigenvalue is less than <em>value</em>
@@ -307,7 +307,9 @@ and fit the data exactly]. Optionally, append <strong>+f</strong><em>file</em> t
 eigenvalues to the specified file for further analysis.
 If a negative <em>value</em> is given then <strong>+f</strong><em>file</em> is required and
 execution will stop after saving the eigenvalues, i.e., no surface
-output is produced.  Specify <strong>-Cn</strong> to retain only the <em>value</em> largest eigenvalues.</dd>
+output is produced.  Specify <strong>-Cn</strong> to retain only the <em>value</em> largest
+eigenvalues; append % if <em>value</em> is the percentage of eigenvalues
+to use instead.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong><em>mode</em></dt>
@@ -337,7 +339,7 @@ two extra columns holding the spline estimate and the misfit.</dd>
 <dt><strong>-G</strong><em>grdfile</em></dt>
 <dd>Name of resulting output file. (1) If options <strong>-R</strong>, <strong>-I</strong>, and
 possibly <strong>-r</strong> are set we produce an equidistant output table. This
-will be written to stdout unless <strong>-G</strong> is specified. Note: for 2-D
+will be written to stdout unless <strong>-G</strong> is specified. <strong>Note</strong>: For 2-D
 grids the <strong>-G</strong> option is required. (2) If option <strong>-T</strong> is
 selected then <strong>-G</strong> is required and the output file is a 2-D binary
 grid file. Applies to 2-D interpolation only. (3) If <strong>-N</strong> is
@@ -628,7 +630,7 @@ be determined by experimentation. Generally, very smooth data (such as
 potential fields) do not require much, if any tension, while rougher
 data (such as topography) will typically interpolate better with
 moderate tension. Make sure you try a range of values before choosing
-your final result. Note: the regularized spline in tension is only
+your final result. <strong>Note</strong>: The regularized spline in tension is only
 stable for a finite range of <em>scale</em> values; you must experiment to find
 the valid range and a useful setting. For more information on tension
 see the references below.</p>
@@ -686,7 +688,7 @@ Int</em>, <strong>174</strong>, 21-28.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

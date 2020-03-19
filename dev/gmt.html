@@ -575,7 +575,7 @@ can be any value):</p>
 <blockquote id="jo-full">
 <div><p><strong>-Jo</strong><em>parameters</em>[<strong>+v</strong>] (Oblique Mercator <strong>[C]</strong>).</p>
 <blockquote>
-<div><p>Typically used with <strong>-R</strong><em>LLx/LLy/URx/URy</em><strong>r</strong> or with projected coordinates.  Specify one of:</p>
+<div><p>Typically used with <strong>-R</strong><em>LLx/LLy/URx/URy</em><strong>+r</strong> or with projected coordinates.  Specify one of:</p>
 <dl class="docutils">
 <dt><strong>-Jo</strong>[<strong>a</strong>|<strong>A</strong>]<em>lon0/lat0/azimuth/scale</em> or <strong>-JO</strong>[<strong>a</strong>|<strong>A</strong>]<em>lon0/lat0/azimuth/width</em></dt>
 <dd>Set projection center <em>lon0/lat0</em>, <em>azimuth</em> of oblique equator, and <em>scale</em>.</dd>
@@ -1054,7 +1054,7 @@ combinations of <em>ncols</em> <em>type</em> (no space).
 Append <strong>w</strong> to any item to force byte-swapping or <strong>+l</strong>|<strong>b</strong>
 for byte-swapping of the entire record. If <em>ncols</em> is not specified
 we assume that <em>type</em> applies to all columns and that <em>ncols</em> is
-implied by the default output of the program. Note: NetCDF file output is
+implied by the default output of the program. <strong>Note</strong>: NetCDF file output is
 not supported.</dd>
 </dl>
 <dl class="docutils" id="c-full">
@@ -1065,7 +1065,7 @@ given then we advance to the next panel in the selected order. If
 no <strong>-c</strong> is given and we just entered subplot mode then the first
 panel (top, left) is selected.  Instead of <em>row, col</em> you may give
 the one-dimensional <em>index</em> which depends on the order you set via <strong>-A</strong>
-when the subplot was defined. Note: <em>row</em>, <em>col</em>, and <em>index</em> all start at 0.</dd>
+when the subplot was defined. <strong>Note</strong>: <em>row</em>, <em>col</em>, and <em>index</em> all start at 0.</dd>
 </dl>
 <dl class="docutils" id="d-full">
 <dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt>
@@ -1134,7 +1134,7 @@ difference must exceed <em>gap</em>. For geographic data
 mile, or s<strong>u</strong>rvey foot. For projected data
 (<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>), choose from <strong>i</strong>nch,
 <strong>c</strong>entimeter, or <strong>p</strong>oint [Default unit set by
-<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. Note: For <strong>x</strong>|<strong>y</strong>|<strong>z</strong> with
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. <strong>Note</strong>: For <strong>x</strong>|<strong>y</strong>|<strong>z</strong> with
 time data the unit is instead controlled by <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>. Repeat
 the option to specify multiple criteria, of which any can be met to
 produce a line break. Issue an additional <strong>-ga</strong> to indicate that
@@ -1245,7 +1245,7 @@ Normally, any trailing text in the internal records will be written but
 when <strong>-o</strong> is used you must explicitly add the column <strong>t</strong>. To only output a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-on</strong> will
 simply write the numerical output only and skip any trailing text, while <strong>-ot</strong>
-will only output the trailing text (or selected word).  Note: If <strong>-i</strong> is
+will only output the trailing text (or selected word).  <strong>Note</strong>: If <strong>-i</strong> is
 also used then columns given to <strong>-o</strong> correspond to the order <em>after</em> the <strong>-i</strong> selection
 and not the columns in the original record.</dd>
 </dl>
@@ -1279,7 +1279,7 @@ starting with the first row (0)]. By default (<strong>+a</strong>) we count rows
 append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment, respectively.
 Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
 are min/max <em>data limits</em> for the values in column <em>col</em>.
-Note: Because arguments may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+<strong>Note</strong>: Because arguments may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
 To read (or write) from a given row until the end of the data, leave off <em>stop</em>.
 To reverse the tests, prepend ~ before giving your first range.</dd>
 </dl>
@@ -1292,7 +1292,7 @@ starting with the first row (0)]. By default (<strong>+a</strong>) we count rows
 append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
 Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
 are min/max <em>data limits</em> for the values in column <em>col</em>.
-Note: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+<strong>Note</strong>: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
 To read from a given row until the end of the data, leave off <em>stop</em>.
 To reverse the tests, prepend ~ before giving your first range.</dd>
 </dl>
@@ -1305,7 +1305,7 @@ starting with the first row (0)]. By default (<strong>+a</strong>) we count rows
 append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment, respectively.
 Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
 are min/max <em>data limits</em> for the values in column <em>col</em>.
-Note: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+<strong>Note</strong>: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
 To write from a given row until the end of the data, leave off <em>stop</em>.
 To reverse the tests, prepend ~ before giving your first range.</dd>
 </dl>
@@ -1579,7 +1579,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

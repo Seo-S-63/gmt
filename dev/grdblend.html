@@ -239,7 +239,7 @@ not filled in with data. Such unconstrained nodes are set to a value
 specified by the user [Default is NaN]. Nodes with more than one value
 will be set to the weighted average value. Any input grid that does not
 share the final output grid’s node registration and grid spacing will
-automatically be resampled via calls to <a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a>. Note: Due to the
+automatically be resampled via calls to <a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a>. <strong>Note</strong>: Due to the
 row-by-row i/o nature of operations in <strong>grdblend</strong> we only support the
 netCDF and native binary grid formats for both input and output.</p>
 </div>
@@ -272,7 +272,7 @@ appending <strong>+n</strong> to the supplied integer argument; the increment is
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="cookbook/file-formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
-details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
+details. <strong>Note</strong>: If <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils" id="r">
@@ -482,7 +482,7 @@ documentation for how to change system limits.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

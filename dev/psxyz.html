@@ -364,7 +364,7 @@ the input data; this cannot be used in conjunction with binary input.
 Optionally, append <strong>c</strong>, <strong>i</strong>, or
 <strong>p</strong> to indicate that the size information in the input data is in
 units of cm, inch, or point, respectively [Default is
-<strong>PROJ_LENGTH_UNIT</strong>]. Note: if you give <em>both</em> size and symbol via the
+<strong>PROJ_LENGTH_UNIT</strong>]. <strong>Note</strong>: If you give <em>both</em> size and symbol via the
 input file you must use <strong>PROJ_LENGTH_UNIT</strong> to indicate the units
 used for the symbol size or append the units to the size in the file.
 Some 2-dimensional symbols optionally take a second size via <em>size_y</em>.
@@ -431,7 +431,7 @@ the vector [30]. Append <strong>+o</strong><em>offset</em> to offset the first s
 beginning of the front by that amount [0]. The chosen symbol is drawn
 with the same pen as set for the line (i.e., via <strong>-W</strong>). To use an
 alternate pen, append <strong>+p</strong><em>pen</em>. To skip the outline, just use
-<strong>+p</strong>. Note: By placing <strong>-Sf</strong>
+<strong>+p</strong>. <strong>Note</strong>: By placing <strong>-Sf</strong>
 options in the segment header you can change the front types on a
 segment-by-segment basis.</dd>
 <dt><strong>-Sg</strong></dt>
@@ -640,7 +640,7 @@ leading hyphen (-) then there will be no space between label
 value and the prefix. [Default is no prefix].</dd>
 </dl>
 </div></blockquote>
-<p class="last">Note: By placing <strong>-Sq</strong> options in the segment header you can change
+<p class="last"><strong>Note</strong>: By placing <strong>-Sq</strong> options in the segment header you can change
 the quoted text attributes on a segment-by-segment basis.</p>
 </dd>
 <dt><strong>-Sr</strong></dt>
@@ -702,7 +702,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dd>geovector. Azimuth (in degrees east from north) and length (in km)
 must be found in columns 4 and 5. The <em>size</em> is the length of the
 vector head. Vector width is set by <strong>-W</strong>. See <a class="reference internal" href="#vector-attributes">Vector Attributes</a>
-for specifying attributes. Note: Geovector stems are drawn as thin
+for specifying attributes. <strong>Note</strong>: Geovector stems are drawn as thin
 filled polygons and hence pen attributes like dashed and dotted are
 not available. For allowable geographical units, see <a class="reference internal" href="#units">Units</a>.</dd>
 <dt><strong>-S~</strong></dt>
@@ -784,7 +784,7 @@ color = black, style = solid].</dd>
 symbol angles [Default is 10].</dd>
 </dl>
 </div></blockquote>
-<p class="last">Note: By placing <strong>-S~</strong> options in the segment header you can change
+<p class="last"><strong>Note</strong>: By placing <strong>-S~</strong> options in the segment header you can change
 the decorated lines on a segment-by-segment basis.</p>
 </dd>
 </dl>
@@ -955,7 +955,7 @@ coordinates of the vector end point.</p>
 <blockquote>
 <div><strong>+z</strong><em>scale</em> expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
-<p>Note: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
+<p><strong>Note</strong>: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
 from the vector stem (a line).  In GMT4, the entire vector was a polygon and it could only
 be a straight Cartesian vector. Yes, the old GMT4 vector shape remains accessible if
 you specify a vector (<strong>-Sv</strong>|<strong>V</strong>) using the GMT4 syntax, explained here: <em>size</em>, if present, will
@@ -1093,7 +1093,7 @@ original polygon.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

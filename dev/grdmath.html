@@ -312,7 +312,7 @@ appending <strong>+n</strong> to the supplied integer argument; the increment is
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="cookbook/file-formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
-details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
+details. <strong>Note</strong>: If <strong>-R</strong><em>grdfile</em> is used then the grid spacing (and registration) have
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils" id="m">
@@ -336,7 +336,7 @@ manipulated [Default will insist that each grid domain is within
 <dt><strong>-S</strong></dt>
 <dd>Reduce (i.e., collapse) the entire stack to a single grid by applying the
 next operator to all co-registered nodes across the entire stack.  You
-must specify <strong>-S</strong> <em>after</em> listing all of your grids.  Note: You can only
+must specify <strong>-S</strong> <em>after</em> listing all of your grids.  <strong>Note</strong>: You can only
 follow <strong>-S</strong> with a reducing operator, i.e., from the list ADD, AND, MAD,
 LMSSCL, MAX, MEAN, MEDIAN, MIN, MODE, MUL, RMS, STD, SUB, VAR or XOR.</dd>
 </dl>
@@ -1369,7 +1369,7 @@ grid domain and the (lon, lat) point are expected to be in degrees.
 Similarly, the <strong>SAZ</strong> and <strong>SBAZ</strong> operators calculate spherical
 azimuth and back-azimuths in degrees, respectively. The operators
 <strong>LDIST</strong> and <strong>PDIST</strong> compute spherical distances in km if <strong>-fg</strong> is
-set or implied, else they return Cartesian distances. Note: If the current
+set or implied, else they return Cartesian distances. <strong>Note</strong>: If the current
 <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> is ellipsoidal then
 geodesics are used in calculations of distances, which can be slow.
 You can trade speed with accuracy by changing the algorithm used to
@@ -1529,7 +1529,7 @@ the following macro expects three arguments (radius x0 y0) and sets the
 modes that are inside the given circle to 1 and those outside to 0:</p>
 <p>INCIRCLE = CDIST EXCH DIV 1 LE : usage: r x y INCIRCLE to return 1
 inside circle</p>
-<p>Note: Because geographic or time constants may be present in a macro, it
+<p><strong>Note</strong>: Because geographic or time constants may be present in a macro, it
 is required that the optional comment flag (:) must be followed by a space.</p>
 </div>
 <div class="section" id="examples">
@@ -1659,7 +1659,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>

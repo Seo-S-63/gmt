@@ -219,7 +219,7 @@
 <p><strong>gmt grdinterpolate</strong> <em>3Dgrid</em> | <em>grd1 grd2 …</em>
 <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outfile</em>
 <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>min/max</em>/]<em>inc</em>[<strong>+n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em>
-[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>line</em> ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>table</em>|<em>line</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><strong>l</strong>|<strong>a</strong>|<strong>c</strong>|<strong>n</strong>[<strong>+1</strong>|<strong>2</strong>] ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>x/y</em>|<em>pointfile</em>[<strong>+h</strong><em>header</em>] ]
@@ -276,8 +276,10 @@ For details on array creation, see <a class="reference internal" href="#generate
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+g</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+p</strong>][<strong>+r</strong><em>radius</em>][<strong>+x</strong>]</dt>
-<dd>Specify a crossectinonal profile via coordinates and modifiers. The format of each <em>line</em> is
+<dt><strong>-E</strong><em>table</em>|<em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+g</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+p</strong>][<strong>+r</strong><em>radius</em>][<strong>+x</strong>]</dt>
+<dd>Specify a crossectinonal profile via a <em>file</em> or from specified <em>line</em> coordinates and modifiers.
+If a <em>file</em>, it must be contain a single segment with either <em>lon lat</em> or <em>lon lat dist</em> records.
+These must be equidistant.  Alternatively, the format of each <em>line</em> is
 <em>start</em>/<em>stop</em>, where <em>start</em> or <em>stop</em> are <em>lon</em>/<em>lat</em> (<em>x</em>/<em>y</em> for
 Cartesian data). You may append <strong>+i</strong><em>inc</em> to set the sampling interval;
 if not given then we default to half the minimum grid interval.  If your <em>line</em> starts and
@@ -474,7 +476,7 @@ Fibonacci numbers:</p>
 then you must append a comma to distinguish the list from the setting of <em>inc</em>.</p>
 <p>If the module allows you to set up an absolute time series, append a valid time unit from the list
 <strong>y</strong>ear, m<strong>o</strong>nth, <strong>w</strong>eek, <strong>d</strong>ay, <strong>h</strong>our, <strong>m</strong>inute, and <strong>s</strong>econd
-to the given increment; add <strong>+t</strong> to ensure time column (or use <strong>-f</strong>). Note: The internal time
+to the given increment; add <strong>+t</strong> to ensure time column (or use <strong>-f</strong>). <strong>Note</strong>: The internal time
 unit is still controlled independently by <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>.  The first 7 days of March 2020:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T2020-03-01T/2020-03-07T/1d <span class="nv">T</span> <span class="o">=</span>
 <span class="m">2020</span>-03-01T00:00:00
@@ -593,7 +595,7 @@ distances be longitude degrees along the parallel, try:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 19, 2020.
       </span>
 
     </p>
